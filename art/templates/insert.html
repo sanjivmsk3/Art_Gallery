@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+
+{% block contant %}
+{% load crispy_forms_tags %}
+<div class="row">
+    <div class="col-lg-6 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <form action="{% url 'insert' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ inserts|crispy }}  
+                    <input type="submit" class="btn btn-success mt-3 float-end"> 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+Gallery is a general term for any building or room used to
+ display art, but unlike an art gallery operated by an art 
+ dealer, works from the collection of an art museum 
+are not generally for sale, but held in public trust.
